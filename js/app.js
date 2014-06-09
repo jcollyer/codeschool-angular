@@ -71,10 +71,13 @@
       createdOn: 1397490980837
     }]
   }];
+
   var app = angular.module('gemStore', []);
+
   app.controller('StoreController', function(){
     this.products = gems;
   });
+
   app.controller('TabController', function(){
     this.tab = 1;
     this.setTab = function(selectedTab){
@@ -84,4 +87,12 @@
       return this.tab === checkTab
     };
   });
+
+  app.controller('GalleryController', function(){
+    this.current = 0;
+    this.setCurrent = function(newGallery){
+      this.current = newGallery || 0;
+    };
+  });
+
 })();
